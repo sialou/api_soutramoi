@@ -25,7 +25,7 @@ Route::get('/septup', function () {
 
     ];
     if(!Auth::attempt($credentials)){
-        $user=new \App\Models\user();
+        $user=new \App\Models\User();
         $user->name ="Admin";
         $user->email=$credentials['email'];
         $user->password= Hash::make($credentials['password']);
