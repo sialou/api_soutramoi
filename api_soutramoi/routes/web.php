@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/septup', function () {
+Route::get('/setup', function () {
     $credentials=[
         'email'=>'admin@admin.com',
         'password'=>'password'

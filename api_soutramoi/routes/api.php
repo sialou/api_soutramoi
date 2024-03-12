@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,17 @@ Route::group(['prefix'=> 'v1', 'namespace' =>'App\Http\Controllers\Api\V1', 'mid
    Route::apiResource('invoices', InvoiceController::class);
    Route::post('invoices/bulk', ['uses'=>'InvoiceController@bulkStore']);
 
+
 });
+
+Route::group(['prefix'=> 'v1', 'namespace' =>'App\Http\Controllers\Api\V1'], function(){
+
+
+    Route::post('/send-email', [EmailController::class, 'send']);
+
+ });
+
+
+
+
+
